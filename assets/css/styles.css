@@ -336,6 +336,15 @@ img {
 }
 
 /* ===== CONTACT =====*/
+.calendarTitle {
+  font-size: 1.5rem;
+  margin-bottom: var(--mb-4);
+}
+.orEmail {
+  font-size: 1rem;
+  margin-bottom: var(--mb-4);
+  margin-top: 50px;
+}
 .contact__input {
   width: 100%;
   font-size: var(--normal-font-size);
@@ -353,6 +362,7 @@ img {
   font-size: var(--normal-font-size);
   cursor: pointer;
   margin-left: auto;
+  margin-right: auto;
 }
 
 /* ===== FOOTER =====*/

@@ -6,13 +6,33 @@
 
     <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <!-- =====BOX ICONS===== -->
+     <!-- =====BOX ICONS===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fissa un Appuntamento</title>
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+
+    <!-- =====GOOGLE CALENDAR INIZIO===== -->
     <link
       href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
       rel="stylesheet"
     />
 
     <title>Portfolio website complete</title>
+     <!-- =====GOOGLE CALENDAR FINE===== -->
+
+
+      <!-- =====CONTACT EMAIL SEND===== -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Contact Form</title>
+      <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+      <script>
+          (function(){
+              emailjs.init("SamueleReiz"); // Sostituisci YOUR_USER_ID con il tuo user ID di EmailJS
+          })();
+      </script>
+        <!-- =====CONTACT EMAIL SEND FINE===== -->
   </head>
   <body>
     <!--===== HEADER =====-->
@@ -234,29 +254,82 @@
       </section>
 
       <!--===== CONTACT =====-->
+     
       <section class="contact section" id="contact">
         <h2 class="section-title">Contact</h2>
-
         <div class="contact__container bd-grid">
-          <form action="" class="contact__form">
-            <input type="text" placeholder="Name" class="contact__input" />
-            <input type="mail" placeholder="Email" class="contact__input" />
-            <textarea
-              name=""
-              id=""
-              cols="0"
-              rows="10"
-              class="contact__input"
-            ></textarea>
-            <input
-              type="button"
-              value="Send"
-              class="contact__button button"
-            />
-          </form>
+            <h1 class="calendarTitle">Fissa un appuntamento:</h1>
+            <!-- Google Calendar Appointment Scheduling begin -->
+            <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+            <script>
+            (function() {
+                var target = document.currentScript;
+                window.addEventListener('load', function() {
+                    calendar.schedulingButton.load({
+                        url: 'https://calendar.app.google/wNAh31xdqnSeJyyt8',
+                        color: '#039BE5',
+                        label: 'Google Calendar',
+                        target,
+                    });
+                });
+            })();
+            </script>
+            <!-- end Google Calendar Appointment Scheduling -->
+            <h1 class="orEmail">or send a email:</h1>
+            <form action="" class="contact__form" id="contactForm">
+                <input type="text" placeholder="Name" class="contact__input" id="name" required />
+                <input type="email" placeholder="Email" class="contact__input" id="email" required />
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="0"
+                  rows="10"
+                  class="contact__input"
+                  required
+                ></textarea>
+                <input
+                  type="button"
+                  value="Send"
+                  class="contact__button button"
+                  id="sendButton"
+                />
+            </form>
         </div>
-      </section>
+    </section>
     </main>
+
+
+      <!-- =====CONTACT EMAIL SEND JS FINE===== -->
+    <script>
+      document.getElementById('sendButton').addEventListener('click', function() {
+          // Ottieni i valori dei campi del form
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const message = document.getElementById('message').value;
+
+          // Configura i parametri per EmailJS
+          const templateParams = {
+                to_name: 'Recipient Name', // Puoi sostituire con il nome del destinatario o renderlo dinamico
+                from_name: name,
+                from_email: email,
+                message: message
+          };
+
+          // Invia l'email usando EmailJS
+          emailjs.send('service_p4k88la', 'template_wwnc64e', templateParams)
+              .then(function(response) {
+                  console.log('SUCCESS!', response.status, response.text);
+                  alert('Email inviata con successo!');
+              }, function(error) {
+                  console.log('FAILED...', error);
+                  alert('Errore nell\'invio dell\'email.');
+              });
+      });
+  </script>
+
+      <!-- =====CONTACT EMAIL SEND JS FINE===== -->
+
+
 
     <!--===== FOOTER =====-->
     <footer class="footer">
