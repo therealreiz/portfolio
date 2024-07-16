@@ -297,10 +297,7 @@ img {
 .skills__html {
   width: 20%;
 }
-.skills__css {
-  width: 20%;
-}
-.skills__js {
+.skills__javascript {
   width: 75%;
 }
 .skills__php {
@@ -312,8 +309,11 @@ img {
 .skills__premiere {
   width: 65%;
 }
-.skills__photoshop {
-  width: 45%;
+.skills__finalcut {
+  width: 50%;
+}
+.skills__logic {
+  width: 80%;
 }
 .skills__img {
   border-radius: 0.5rem;
@@ -365,6 +365,15 @@ img {
   margin-right: auto;
 }
 
+.contact__button:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
+
+.button:hover {
+  background-color: #45a049;
+  transform: scale(1.1);
+}
 /* ===== FOOTER =====*/
 .footer {
   background-color: var(--second-color);
