@@ -300,6 +300,9 @@ img {
 .skills__javascript {
   width: 75%;
 }
+.skills__mysql {
+  width: 20%;
+}
 .skills__php {
   width: 30%;
 }
@@ -308,6 +311,12 @@ img {
 }
 .skills__premiere {
   width: 65%;
+}
+.skills__after {
+  width: 50%;
+}
+.skills__photoshop {
+  width: 50%;
 }
 .skills__finalcut {
   width: 50%;
