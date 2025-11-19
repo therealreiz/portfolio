@@ -284,6 +284,7 @@ img {
 .skills__names {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
 }
 .skills__bar {
   position: absolute;
@@ -295,16 +296,37 @@ img {
   z-index: var(--z-back);
 }
 .skills__html {
-  width: 50%;
+  width: 80%;
 }
 .skills__javascript {
   width: 80%;
 }
-.skills__mysql {
+.skills__react {
   width: 30%;
 }
+.skills__java {
+  width: 30%;
+}
+.skills__angular {
+  width: 30%;
+}
+.skills__python {
+  width: 30%;
+}
+.skills__c {
+  width: 30%;
+}
+.skills__git {
+  width: 70%;
+}
+.skills__jupyter {
+  width: 30%;
+}
+.skills__mysql {
+  width: 60%;
+}
 .skills__php {
-  width: 20%;
+  width: 60%;
 }
 .skills__wordpress {
   width: 20%;
