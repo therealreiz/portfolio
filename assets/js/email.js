@@ -3,17 +3,17 @@ function sendMail() {
   const email = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // Validazione semplice dell'email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!email || !emailRegex.test(email)) {
-    showMessage("Inserisci una email valida.", "red");
-    return; // interrompe l'invio
+  // Controllo che tutti i campi siano compilati
+  if (!name || !email || !message) {
+    showMessage("Compila tutti i campi prima di inviare.", "red");
+    return; // blocca l'invio
   }
 
-  // Validazione nome e messaggio vuoti (opzionale)
-  if (!name || !message) {
-    showMessage("Compila tutti i campi prima di inviare.", "red");
-    return;
+  // Validazione email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showMessage("Inserisci una email valida.", "red");
+    return; // blocca l'invio
   }
 
   const params = { name, email, message };
